@@ -14,12 +14,12 @@ if(!$product){
 ?>
 <?php
  if(isset($_POST['product'])){
-    $req_fields = array('product-title','product-categorie','product-quantity');
+    $req_fields = array('product-title','product-category','product-quantity');
     validate_fields($req_fields);
 
    if(empty($errors)){
        $p_name  = remove_junk($db->escape($_POST['product-title']));
-       $p_cat   = (int)$_POST['product-categorie'];
+       $p_cat   = (int)$_POST['product-category'];
        $p_qty   = remove_junk($db->escape($_POST['product-quantity']));
        $query   = "UPDATE products SET";
        $query  .=" name ='{$p_name}', quantity ='{$p_qty}',";
@@ -70,8 +70,8 @@ if(!$product){
               <div class="form-group">
                 <div class="row">
                   <div class="col-md-6">
-                    <select class="form-control" name="product-categorie">
-                    <option value=""> Select a categorie</option>
+                    <select class="form-control" name="product-category">
+                    <option value=""> Select a category</option>
                    <?php  foreach ($all_categories as $cat): ?>
                      <option value="<?php echo (int)$cat['id']; ?>" <?php if($product['categorie_id'] === $cat['id']): echo "selected"; endif; ?> >
                        <?php echo remove_junk($cat['name']); ?></option>

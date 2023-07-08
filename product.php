@@ -24,11 +24,11 @@
   // Sorting logic for category
   if ($sortCategory === 'asc') {
     usort($products, function ($a, $b) {
-      return strcmp($a['categorie'], $b['categorie']);
+      return strcmp($a['category'], $b['category']);
     });
   } elseif ($sortCategory === 'desc') {
     usort($products, function ($a, $b) {
-      return strcmp($b['categorie'], $a['categorie']);
+      return strcmp($b['category'], $a['category']);
     });
   }
 
@@ -85,7 +85,7 @@
               <?php foreach ($products as $product):?>
               <tr>
                 <td><?php echo remove_junk($product['name']); ?></td>
-                <td class="text-center"><?php echo remove_junk($product['categorie']); ?></td>
+                <td class="text-center"><?php echo remove_junk($product['category']); ?></td>
                 <td class="text-center"><?php echo remove_junk($product['quantity']); ?></td>
                 <td class="text-center"><?php echo read_date($product['date']); ?></td>
                 <td class="text-center">

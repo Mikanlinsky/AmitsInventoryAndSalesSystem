@@ -40,7 +40,7 @@
   </div>
 
   <div class="col-md-3">
-    <a href="categorie.php" style="color:black;">
+    <a href="category.php" style="color:black;">
       <div class="panel panel-box panel-user clearfix">
         <div class="panel-icon pull-left bg-red">
           <i class="glyphicon glyphicon-th-large"></i>
