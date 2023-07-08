@@ -53,7 +53,7 @@ CREATE TABLE `products` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `quantity` varchar(50) DEFAULT NULL,
-  `categorie_id` int(11) UNSIGNED NOT NULL,
+  `category_id` int(11) UNSIGNED NOT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -61,7 +61,7 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `quantity`, `categorie_id`, `date`) VALUES
+INSERT INTO `products` (`id`, `name`, `quantity`, `category_id`, `date`) VALUES
 (1, 'Creamy Peanut Butter', '20', 9, '2023-06-26 11:33:39'),
 (15, 'Tender Juicy Hotdog', '5', 13, '2023-06-26 11:59:04'),
 (18, 'Oranges ', '15', 10, '2023-06-27 02:58:30'),
@@ -159,7 +159,7 @@ ALTER TABLE `categories`
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`),
-  ADD KEY `categorie_id` (`categorie_id`);
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- Indexes for table `sales`
@@ -224,7 +224,7 @@ ALTER TABLE `user_groups`
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `FK_products` FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_products` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `sales`

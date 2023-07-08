@@ -5,7 +5,7 @@
    page_require_level(1);
 ?>
 <?php
- $c_categorie     = count_by_id('categories');
+ $c_category     = count_by_id('categories');
  $c_product       = count_by_id('products');
  $c_sale          = count_by_id('sales');
  $c_user          = count_by_id('users');
@@ -40,13 +40,13 @@
   </div>
 
   <div class="col-md-3">
-    <a href="categorie.php" style="color:black;">
+    <a href="category.php" style="color:black;">
       <div class="panel panel-box panel-user clearfix">
         <div class="panel-icon pull-left bg-red">
           <i class="glyphicon glyphicon-th-large"></i>
         </div>
         <div class="panel-value pull-right">
-          <h2 class="margin-top"><?php echo $c_categorie['total']; ?></h2>
+          <h2 class="margin-top"><?php echo $c_category['total']; ?></h2>
           <p class="text-muted">Categories</p>
         </div>
       </div>

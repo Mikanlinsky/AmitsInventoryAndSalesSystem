@@ -201,14 +201,14 @@ function tableExists($table){
      }
    /*--------------------------------------------------------------*/
    /* Function for Finding all product name
-   /* JOIN with categorie  and media database table
+   /* JOIN with category  and media database table
    /*--------------------------------------------------------------*/
   function join_product_table(){
      global $db;
      $sql  =" SELECT p.id,p.name,p.quantity,p.date,c.name";
-    $sql  .=" AS categorie";
+    $sql  .=" AS category";
     $sql  .=" FROM products p";
-    $sql  .=" LEFT JOIN categories c ON c.id = p.categorie_id";
+    $sql  .=" LEFT JOIN categories c ON c.id = p.category_id";
     $sql  .=" ORDER BY p.id ASC";
     return find_by_sql($sql);
 
@@ -255,8 +255,8 @@ function tableExists($table){
   /*--------------------------------------------------------------*/
  function find_recent_product_added($limit){
    global $db;
-   $sql   = " SELECT p.id,p.name,c.name AS categorie,";
-   $sql  .= " LEFT JOIN categories c ON c.id = p.categorie_id";
+   $sql   = " SELECT p.id,p.name,c.name AS category,";
+   $sql  .= " LEFT JOIN categories c ON c.id = p.category_id";
    $sql  .= " ORDER BY p.id DESC LIMIT ".$db->escape((int)$limit);
    return find_by_sql($sql);
  }
