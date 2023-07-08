@@ -15,7 +15,7 @@
      $p_qty   = remove_junk($db->escape($_POST['product-quantity']));
      $date    = make_date();
      $query  = "INSERT INTO products (";
-     $query .=" name,quantity,categorie_id,date";
+     $query .=" name,quantity,category_id,date";
      $query .=") VALUES (";
      $query .=" '{$p_name}', '{$p_qty}', '{$p_cat}', '{$date}'";
      $query .=")";

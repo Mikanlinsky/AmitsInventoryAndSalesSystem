@@ -23,7 +23,7 @@ if(!$product){
        $p_qty   = remove_junk($db->escape($_POST['product-quantity']));
        $query   = "UPDATE products SET";
        $query  .=" name ='{$p_name}', quantity ='{$p_qty}',";
-       $query  .=" categorie_id ='{$p_cat}'";
+       $query  .=" category_id ='{$p_cat}'";
        $query  .=" WHERE id ='{$product['id']}'";
        $result = $db->query($query);  
                if($result && $db->affected_rows() === 1){
@@ -73,7 +73,7 @@ if(!$product){
                     <select class="form-control" name="product-category">
                     <option value=""> Select a category</option>
                    <?php  foreach ($all_categories as $cat): ?>
-                     <option value="<?php echo (int)$cat['id']; ?>" <?php if($product['categorie_id'] === $cat['id']): echo "selected"; endif; ?> >
+                     <option value="<?php echo (int)$cat['id']; ?>" <?php if($product['category_id'] === $cat['id']): echo "selected"; endif; ?> >
                        <?php echo remove_junk($cat['name']); ?></option>
                    <?php endforeach; ?>
                  </select>

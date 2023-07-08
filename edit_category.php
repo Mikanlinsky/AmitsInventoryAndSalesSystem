@@ -50,7 +50,7 @@ if(isset($_POST['edit_cat'])){
         </strong>
        </div>
        <div class="panel-body">
-         <form method="post" action="edit_categorie.php?id=<?php echo (int)$category['id'];?>">
+         <form method="post" action="edit_category.php?id=<?php echo (int)$category['id'];?>">
            <div class="form-group">
                <input type="text" class="form-control" name="category-name" value="<?php echo remove_junk(ucfirst($category['name']));?>">
            </div>
