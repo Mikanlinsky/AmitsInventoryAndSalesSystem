@@ -248,7 +248,6 @@ function tableExists($table){
     $sql = "UPDATE products SET quantity=quantity -'{$qty}' WHERE id = '{$id}'";
     $result = $db->query($sql);
     return($db->affected_rows() === 1 ? true : false);
-
   }
   /*--------------------------------------------------------------*/
   /* Function for Display Recent product Added
@@ -315,15 +314,15 @@ function find_sale_by_dates($start_date, $end_date){
 /*--------------------------------------------------------------*/
 /* Function for Generate Daily sales report
 /*--------------------------------------------------------------*/
-function  dailySales($year,$month){
+function dailySales($year, $month, $date){
   global $db;
   $sql  = "SELECT s.qty,";
-  $sql .= " DATE_FORMAT(s.date, '%Y-%m-%e') AS date,p.name,";
+  $sql .= " DATE_FORMAT(s.date, '%Y-%m-%e') AS date, p.name,";
   $sql .= " SUM(s.price) AS total_saleing_price";
   $sql .= " FROM sales s";
   $sql .= " LEFT JOIN products p ON s.product_id = p.id";
-  $sql .= " WHERE DATE_FORMAT(s.date, '%Y-%m' ) = '{$year}-{$month}'";
-  $sql .= " GROUP BY DATE_FORMAT( s.date,  '%e' ),s.product_id";
+  $sql .= " WHERE DATE_FORMAT(s.date, '%Y-%m-%e') = '{$year}-{$month}-{$date}'";
+  $sql .= " GROUP BY DATE_FORMAT(s.date, '%e'), s.product_id";
   return find_by_sql($sql);
 }
 /*--------------------------------------------------------------*/
