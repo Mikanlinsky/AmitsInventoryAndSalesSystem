@@ -8,7 +8,8 @@
 <?php
  $year  = date('Y');
  $month = date('m');
- $sales = dailySales($year,$month);
+ $date  = date('j');
+ $sales = dailySales($year,$month,$date);
 ?>
 <?php include_once('layouts/header.php'); ?>
 <div class="row">
