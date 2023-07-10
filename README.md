@@ -1,4 +1,4 @@
-﻿# Amits Inventory And Sales System
+# Amits Inventory And Sales System
 
 Download and Installation
  1. Download the source code here in GitHub (zip file).
